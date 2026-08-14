@@ -25,7 +25,7 @@ func CreateOrderHandler(w http.ResponseWriter, r *http.Request) {
 
 	if request.ProductID == "" {
 		http.Error(w, "productId は必須です", http.StatusBadRequest)
-		// 意図的な不具合: エラー応答後に処理を終了していない。
+		return
 	}
 
 	w.Header().Set("Content-Type", "application/json")
